@@ -132,7 +132,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         Span::styled(
                             first,
                             Style::default()
-                                .fg(Color::Yellow)
+                                .fg(Color::Green)
                                 .add_modifier(Modifier::UNDERLINED),
                         ),
                         Span::styled(rest, Style::default().fg(Color::White)),
@@ -144,7 +144,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .select(active_menu_item.into())
                 .block(Block::default().title("Menu").borders(Borders::ALL))
                 .style(Style::default().fg(Color::White))
-                .highlight_style(Style::default().fg(Color::Yellow))
+                .highlight_style(Style::default().fg(Color::Green))
                 .divider(Span::raw("|"));
 
             rect.render_widget(tabs, chunks[0]);
@@ -264,7 +264,7 @@ fn render_pets<'a>(pet_list_state: &ListState) -> (List<'a>, Table<'a>) {
 
     let list = List::new(items).block(pets).highlight_style(
         Style::default()
-            .bg(Color::Yellow)
+            .bg(Color::Green)
             .fg(Color::Black)
             .add_modifier(Modifier::BOLD),
     );
